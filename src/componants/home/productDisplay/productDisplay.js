@@ -89,7 +89,9 @@ function ProductDisplay() {
                     </h5>
                 </Col>
                 <Col sm={2}>
-                    {indexOfCartProduct >= 0 ?
+                    {user.admin ? <></>
+                    :
+                    indexOfCartProduct >= 0 ?
                         <ButtonToolbar aria-label="Toolbar with Button groups">
                             <ButtonGroup className="me-2" aria-label="First group">
                                 <Button

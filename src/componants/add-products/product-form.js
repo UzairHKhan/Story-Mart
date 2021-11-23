@@ -63,7 +63,7 @@ function ProductForm() {
     // useEffect(() => {
     // console.log(productValue)
     // }, [productValue])
-
+    const categoryArr = ['Smart Watch', 'Cosmetics', 'Mobile Accessories', 'Others']
 
     return (
         <>
@@ -79,10 +79,9 @@ function ProductForm() {
                                 placeholder="Product Category"
                                 onChange={(e) => handleChange(e)}
                             >
-                                <option>Smart Watch</option>
-                                <option>Cosmetics</option>
-                                <option>Mobile Accessories</option>
-                                <option>Others</option>
+                                {categoryArr.forEach(val => { 
+                                return <option>val</option>}
+                                )}
                             </Form.Select>
                             {/* <Form.Control
                                 type="text"

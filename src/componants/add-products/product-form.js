@@ -79,8 +79,8 @@ function ProductForm() {
                                 placeholder="Product Category"
                                 onChange={(e) => handleChange(e)}
                             >
-                                {categoryArr.forEach(val => { 
-                                return <option>val</option>}
+                                {categoryArr.map(cat =>
+                                    <option> {cat} </option>
                                 )}
                             </Form.Select>
                             {/* <Form.Control
@@ -118,20 +118,20 @@ function ProductForm() {
                         </Col>
                     </Form.Group>
                     {productValue.varients.map((varient, index) =>
-                            <VarientField
-                                key={varient.id}
-                                index={index}
-                                varient={varient}
-                                inputVal={varient.type}
-                                deleteVarient={deleteVarient}
-                                onChange={(value) => {
-                                    setProductValue((val) => {
-                                        const clone = { ...val }
-                                        clone.varients[index] = value;
-                                        return clone
-                                    })
-                                }}
-                            />
+                        <VarientField
+                            key={varient.id}
+                            index={index}
+                            varient={varient}
+                            inputVal={varient.type}
+                            deleteVarient={deleteVarient}
+                            onChange={(value) => {
+                                setProductValue((val) => {
+                                    const clone = { ...val }
+                                    clone.varients[index] = value;
+                                    return clone
+                                })
+                            }}
+                        />
                     )}
                     <Form.Group as={Row} className="mb-3">
                         <Form.Label column sm={2}>
